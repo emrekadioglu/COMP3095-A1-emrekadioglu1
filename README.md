@@ -5,9 +5,9 @@ Gradle (Kotlin DSL) multi-module project, Java 21, Spring Boot 3.5.x.
 
 ## Group members
 
-| Name | Student number | GitLab username |
+| Name | Student number 
 |------|----------------|-----------------|
-| Emre Kadioglu | 101443133 | `<your-gitlab-username>` |
+| Emre Kadioglu | 101443133 | ` 
 
 ## Services
 
