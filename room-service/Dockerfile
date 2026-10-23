@@ -7,8 +7,8 @@ COPY settings.gradle.kts .
 COPY build.gradle.kts .
 COPY room-service/build.gradle.kts room-service/
 COPY room-service/src room-service/src
-RUN chmod +x gradlew
-RUN ./gradlew :room-service:bootJar -x test --no-daemon
+RUN sed -i "s/\r$//" gradlew && chmod +x gradlew
+RUN sh ./gradlew :room-service:bootJar -x test --no-daemon
 
 # Runtime stage
 FROM eclipse-temurin:21-jre-alpine

@@ -7,8 +7,8 @@ COPY settings.gradle.kts .
 COPY build.gradle.kts .
 COPY user-service/build.gradle.kts user-service/
 COPY user-service/src user-service/src
-RUN chmod +x gradlew
-RUN ./gradlew :user-service:bootJar -x test --no-daemon
+RUN sed -i "s/\r$//" gradlew && chmod +x gradlew
+RUN sh ./gradlew :user-service:bootJar -x test --no-daemon
 
 # Runtime stage
 FROM eclipse-temurin:21-jre-alpine

@@ -7,8 +7,8 @@ COPY settings.gradle.kts .
 COPY build.gradle.kts .
 COPY booking-service/build.gradle.kts booking-service/
 COPY booking-service/src booking-service/src
-RUN chmod +x gradlew
-RUN ./gradlew :booking-service:bootJar -x test --no-daemon
+RUN sed -i "s/\r$//" gradlew && chmod +x gradlew
+RUN sh ./gradlew :booking-service:bootJar -x test --no-daemon
 
 # Runtime stage
 FROM eclipse-temurin:21-jre-alpine
